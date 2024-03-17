@@ -2,11 +2,13 @@ using Carter;
 using FluentValidation;
 using Mapster;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using opytuvannia_backend.Contracts.Respondents.Requests;
 using opytuvannia_backend.Contracts.Respondents.Responses;
 using opytuvannia_backend.Database;
 using opytuvannia_backend.Entities;
+using opytuvannia_backend.Extensions.Security;
 using opytuvannia_backend.Shared;
 
 namespace opytuvannia_backend.Features.Respondents;
@@ -15,9 +17,9 @@ public static class CreateRespondent
 {
     public class Command : IRequest<Result<RespondentResponse>>
     {
-        public string? Email { get; set; }
-        public string? Password { get; set; }
-        public string? Name { get; set; }
+        public required string Email { get; set; }
+        public required string Password { get; set; }
+        public required string Name { get; set; }
     }
 
     public class Validator : AbstractValidator<Command>
@@ -47,11 +49,13 @@ public static class CreateRespondent
     {
         private readonly ApplicationDbContext _dbContext;
         private readonly IValidator<Command> _validator;
+        private readonly IPasswordEncoder _passwordEncoder;
 
-        public Handler(ApplicationDbContext dbContext, IValidator<Command> validator)
+        public Handler(ApplicationDbContext dbContext, IValidator<Command> validator, IPasswordEncoder passwordEncoder)
         {
             _dbContext = dbContext;
             _validator = validator;
+            _passwordEncoder = passwordEncoder;
         }
 
         public async Task<Result<RespondentResponse>> Handle(Command request, CancellationToken cancellationToken)
@@ -71,10 +75,12 @@ public static class CreateRespondent
                 return Result.Failure<RespondentResponse>(Error.EmailOccupied);
             }
 
+            var encryptedPassword = _passwordEncoder.Encode(request.Password);
+            
             var respondent = new Respondent
             {
                 Email = request.Email,
-                Password = request.Password,
+                Password = encryptedPassword,
                 Name = request.Name
             };
 
@@ -90,13 +96,13 @@ public class CreateRespondentEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapPost("api/v1/respondents", CreateRespondentHandler);
+        app.MapPost("api/v1/respondents", Handler);
     }
     
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(RespondentResponse))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Error))]
-    private async Task<IResult> CreateRespondentHandler(CreateRespondentRequest request, ISender sender)
+    private async Task<IResult> Handler(CreateRespondentRequest request, ISender sender)
     {
         var command = request.Adapt<CreateRespondent.Command>();
         var result = await sender.Send(command);
