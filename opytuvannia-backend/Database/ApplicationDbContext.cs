@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using opytuvannia_backend.Entities;
 
 namespace opytuvannia_backend.Database;
 
@@ -9,7 +10,10 @@ public class ApplicationDbContext : DbContext
     {
         _configuration = configuration;
     }
-
+    
+    // Entities
+    public DbSet<Respondent> Respondents { get; set; }
+    
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder
