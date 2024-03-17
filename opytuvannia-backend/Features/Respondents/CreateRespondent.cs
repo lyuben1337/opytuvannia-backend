@@ -10,6 +10,7 @@ using opytuvannia_backend.Database;
 using opytuvannia_backend.Entities;
 using opytuvannia_backend.Extensions.Security;
 using opytuvannia_backend.Shared;
+using opytuvannia_backend.Shared.Constants;
 
 namespace opytuvannia_backend.Features.Respondents;
 
@@ -81,7 +82,8 @@ public static class CreateRespondent
             {
                 Email = request.Email,
                 Password = encryptedPassword,
-                Name = request.Name
+                Name = request.Name,
+                Gender = Gender.Unknown
             };
 
             _dbContext.Add(respondent);

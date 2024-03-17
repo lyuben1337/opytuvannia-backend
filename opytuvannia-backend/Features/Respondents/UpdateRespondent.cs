@@ -42,7 +42,7 @@ public static class UpdateRespondent
             RuleFor(c => c.Gender)
                 .NotEmpty()
                 .MaximumLength(255)
-                .Must(g => Enum.TryParse<Gender>(value: g, ignoreCase: true, out _))
+                .Must(g => Enum.TryParse<Gender>(g, out _))
                 .WithMessage("Invalid gender")
                 .When(c => c.Gender is not null);
 
