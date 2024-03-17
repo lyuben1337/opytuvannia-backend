@@ -9,4 +9,6 @@ public record Error(string Code, string Message)
     // Respondent
     public static readonly Error EmailOccupied =
         new("Respondent.EmailOccupied", "Account with given email already exists");
+    public static readonly Error RespondentNotFound =
+        new("Respondent.NotFound", "Respondent with specified id does not exist");
 }

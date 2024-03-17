@@ -2,6 +2,7 @@ using Carter;
 using FluentValidation;
 using Mapster;
 using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using opytuvannia_backend.Contracts.Respondents.Requests;
 using opytuvannia_backend.Contracts.Respondents.Responses;
 using opytuvannia_backend.Database;
@@ -14,9 +15,9 @@ public static class CreateRespondent
 {
     public class Command : IRequest<Result<RespondentResponse>>
     {
-        public string Email { get; set; } = string.Empty;
-        public string Password { get; set; } = string.Empty;
-        public string Name { get; set; } = string.Empty;
+        public string? Email { get; set; }
+        public string? Password { get; set; }
+        public string? Name { get; set; }
     }
 
     public class Validator : AbstractValidator<Command>
@@ -89,17 +90,22 @@ public class CreateRespondentEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapPost("api/v1/respondents", async (CreateRespondentRequest request, ISender sender) =>
+        app.MapPost("api/v1/respondents", CreateRespondentHandler);
+    }
+    
+    [HttpPost]
+    [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(RespondentResponse))]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Error))]
+    private async Task<IResult> CreateRespondentHandler(CreateRespondentRequest request, ISender sender)
+    {
+        var command = request.Adapt<CreateRespondent.Command>();
+        var result = await sender.Send(command);
+
+        if (result.IsFailure)
         {
-            var command = request.Adapt<CreateRespondent.Command>();
-            var result = await sender.Send(command);
+            return Results.BadRequest(result.Error);
+        }
 
-            if (result.IsFailure)
-            {
-                return Results.BadRequest(result.Error);
-            }
-
-            return Results.Ok(result.Value);
-        });
+        return Results.Created($"api/v1/respondents/{result.Value.Id}", result.Value);
     }
 }
