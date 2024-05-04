@@ -7,6 +7,6 @@ public class RespondentSurvey
     public Respondent Respondent { get; set; }
     public string SurveyId { get; set; }
     public Survey Survey { get; set; }
-    public DateTime CompletionDate { get; set; } = DateTime.Now;
+    public DateTime CompletionDate { get; set; } = DateTime.UtcNow;
     public List<RespondentSurveyAnswer> Answers { get; set; }
 }
