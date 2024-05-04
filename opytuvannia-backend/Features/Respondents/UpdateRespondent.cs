@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Carter;
 using FluentValidation;
 using Mapster;
@@ -59,15 +60,25 @@ public static class UpdateRespondent
     {
         private readonly ApplicationDbContext _dbContext;
         private readonly IValidator<Command> _validator;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public Handler(ApplicationDbContext dbContext, IValidator<Command> validator)
+        public Handler(ApplicationDbContext dbContext, IValidator<Command> validator, IHttpContextAccessor httpContextAccessor)
         {
             _dbContext = dbContext;
             _validator = validator;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<Result> Handle(Command request, CancellationToken cancellationToken)
         {
+            var currentRespondentId = _httpContextAccessor.HttpContext?.User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (currentRespondentId != request.Id)
+            {
+                return Result.Failure(new Error("UpdateRespondent.Forbidden",
+                    "You cannot update someone else's account"));
+            }
+            
             var validationResult = await _validator.ValidateAsync(request, cancellationToken);
 
             if (!validationResult.IsValid)

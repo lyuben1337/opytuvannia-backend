@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Carter;
 using Mapster;
 using MediatR;
@@ -21,10 +22,12 @@ public static class GetSurveyById
     internal sealed class Handler : IRequestHandler<Query, Result<SurveyResponse>>
     {
         private readonly ApplicationDbContext _dbContext;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public Handler(ApplicationDbContext dbContext)
+        public Handler(ApplicationDbContext dbContext, IHttpContextAccessor httpContextAccessor)
         {
             _dbContext = dbContext;
+            _httpContextAccessor = httpContextAccessor;
         }
         
         public async Task<Result<SurveyResponse>> Handle(Query request, CancellationToken cancellationToken)
@@ -39,7 +42,18 @@ public static class GetSurveyById
             {
                 return Result.Failure<SurveyResponse>(Error.SurveyNotFound);
             }
+            
+            var respondentId = _httpContextAccessor.HttpContext?.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            
+            var existingRespondentSurvey = await _dbContext.RespondentSurveys
+                .FirstOrDefaultAsync(rs => rs.RespondentId == respondentId && rs.SurveyId == survey.Id, cancellationToken);
 
+            if (existingRespondentSurvey != null)
+            {
+                return Result.Failure<SurveyResponse>(
+                    new Error("Survey.AlreadyResponded", "You have already responded this survey!"));
+            }
+            
             var questions = survey.Questions.ConvertAll(q =>
             {
                 return new QuestionResponse

@@ -14,6 +14,8 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddDbContext<ApplicationDbContext>();
 
 builder.Services.AddMediatR(configuration =>

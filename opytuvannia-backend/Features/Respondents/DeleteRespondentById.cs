@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Carter;
 using FluentValidation;
 using MediatR;
@@ -29,11 +30,13 @@ public static class DeleteRespondentById
     {
         private readonly ApplicationDbContext _dbContext;
         private readonly IValidator<Command> _validator;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public Handler(ApplicationDbContext dbContext, IValidator<Command> validator)
+        public Handler(ApplicationDbContext dbContext, IValidator<Command> validator, IHttpContextAccessor httpContextAccessor)
         {
             _dbContext = dbContext;
             _validator = validator;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<Result> Handle(Command request, CancellationToken cancellationToken)
@@ -45,6 +48,13 @@ public static class DeleteRespondentById
                 return Result.Failure(new Error("DeleteRespondent.Validation", validationResult.ToString()));
             }
 
+            var currentRespondentId = _httpContextAccessor.HttpContext?.User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (currentRespondentId != request.Id)
+            {
+                return Result.Failure(new Error("DeleteRespondent.Forbidden", "You cannot delete someone else's account"));
+            }
+            
             var respondent = await _dbContext.Respondents.FindAsync(request.Id, cancellationToken);
 
             if (respondent is null)
@@ -53,9 +63,7 @@ public static class DeleteRespondentById
             }
 
             _dbContext.Remove(respondent);
-
             await _dbContext.SaveChangesAsync(cancellationToken);
-
             return Result.Success();
         }
     }

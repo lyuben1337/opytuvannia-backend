@@ -71,6 +71,7 @@ public static class CreateRespondentSession
 
             return new RespondentSessionResponse
             {
+                Id = respondent.Id,
                 Token = token,
                 ExpirationDate = _jwtProvider.ExpirationDate
             };
