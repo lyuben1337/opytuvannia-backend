@@ -1,6 +1,8 @@
 using Carter;
 using FluentValidation;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using opytuvannia_backend.Database;
+using opytuvannia_backend.Extensions.OptionsSetup;
 using opytuvannia_backend.Extensions.Security;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +25,14 @@ builder.Services.AddValidatorsFromAssembly(assembly);
 
 builder.Services.AddCors();
 
+builder.Services.ConfigureOptions<JwtOptionsSetup>();
+builder.Services.ConfigureOptions<JwtBearerOptionsSetup>();
+builder.Services.AddAuthorization();
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer();
+
+builder.Services.AddScoped<IJwtProvider, JwtProvider>();
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -38,5 +48,11 @@ app.UseCors(b => b
     .AllowCredentials());
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
+
+app.UseAuthorization();
+
 app.MapCarter();
+
 app.Run();

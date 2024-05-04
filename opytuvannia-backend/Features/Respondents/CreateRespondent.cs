@@ -2,7 +2,6 @@ using Carter;
 using FluentValidation;
 using Mapster;
 using MediatR;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using opytuvannia_backend.Contracts.Respondents.Requests;
 using opytuvannia_backend.Contracts.Respondents.Responses;

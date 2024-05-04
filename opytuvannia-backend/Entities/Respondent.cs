@@ -26,4 +26,6 @@ public class Respondent
     
     [MaxLength(255)]
     public string? Address { get; set; }
+
+    public List<RespondentSurvey> CompletedSurveys { get; set; }
 }

@@ -1,6 +1,7 @@
 using Carter;
 using FluentValidation;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using opytuvannia_backend.Database;
 using opytuvannia_backend.Shared;
@@ -67,6 +68,7 @@ public class DeleteRespondentEndpoint : ICarterModule
         app.MapDelete("api/v1/respondents/{id}", Handler);
     }
 
+    [Authorize]
     [HttpDelete]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Error))]

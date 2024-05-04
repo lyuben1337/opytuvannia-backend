@@ -11,4 +11,7 @@ public record Error(string Code, string Message)
         new("Respondent.EmailOccupied", "Account with given email already exists");
     public static readonly Error RespondentNotFound =
         new("Respondent.NotFound", "Respondent with specified id does not exist");
+    
+    // Survey
+    public static readonly Error SurveyNotFound = new("Survey.NotFound", "Survey with specified id does not exist");
 }

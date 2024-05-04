@@ -2,6 +2,7 @@ using Carter;
 using FluentValidation;
 using Mapster;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using opytuvannia_backend.Contracts.Respondents.Requests;
 using opytuvannia_backend.Contracts.Respondents.Responses;
@@ -101,6 +102,7 @@ public class UpdateRespondentEndpoint : ICarterModule
         app.MapPatch("api/v1/respondents/{id}", Handler);
     }
 
+    [Authorize]
     [HttpPatch]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(Error))]

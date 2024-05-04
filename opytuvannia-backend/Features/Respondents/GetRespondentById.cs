@@ -2,6 +2,7 @@ using Carter;
 using FluentValidation;
 using Mapster;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using opytuvannia_backend.Contracts.Respondents.Responses;
 using opytuvannia_backend.Database;
@@ -47,7 +48,7 @@ public static class GetRespondentById
                     validationResult.ToString()));
             }
 
-            var respondent = await _dbContext.Respondents.FindAsync(request.Id);
+            var respondent = await _dbContext.Respondents.FindAsync(request.Id, cancellationToken);
 
             if (respondent is null)
             {
@@ -66,6 +67,7 @@ public class GetRespondentByIdEndpoint : ICarterModule
         app.MapGet("api/v1/respondents/{id}", Handler);
     }
 
+    [Authorize]
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RespondentResponse))]
     [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(Error))]
