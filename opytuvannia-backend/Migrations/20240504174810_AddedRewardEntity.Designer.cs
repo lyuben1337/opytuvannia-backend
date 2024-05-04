@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using opytuvannia_backend.Database;
@@ -11,9 +12,11 @@ using opytuvannia_backend.Database;
 namespace opytuvannia_backend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240504174810_AddedRewardEntity")]
+    partial class AddedRewardEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,387 +52,387 @@ namespace opytuvannia_backend.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "8066edc3-20f3-42c7-9542-3c91f0d79e1d",
-                            Content = "Відповідь 95",
-                            QuestionId = "44b50da0-1a6d-4df3-8538-0185c2e9e5b8"
+                            Id = "a4ae58c7-8b8c-4fd5-95d8-8e1525b94fc2",
+                            Content = "Відповідь 50",
+                            QuestionId = "6d3d0979-35c7-47e7-ad80-56b5fe36307b"
                         },
                         new
                         {
-                            Id = "d4a6abb3-c453-450d-bfad-00dcbbdd67a8",
-                            Content = "Відповідь 36",
-                            QuestionId = "44b50da0-1a6d-4df3-8538-0185c2e9e5b8"
+                            Id = "02d1740d-c0f3-4a38-8338-099b021e25b1",
+                            Content = "Відповідь 78",
+                            QuestionId = "6d3d0979-35c7-47e7-ad80-56b5fe36307b"
                         },
                         new
                         {
-                            Id = "0a0e17a6-4605-404b-9b79-6dd992959624",
-                            Content = "Відповідь 39",
-                            QuestionId = "44b50da0-1a6d-4df3-8538-0185c2e9e5b8"
-                        },
-                        new
-                        {
-                            Id = "033e9d93-6036-48e7-bbac-765a12439518",
-                            Content = "Відповідь 9",
-                            QuestionId = "44b50da0-1a6d-4df3-8538-0185c2e9e5b8"
-                        },
-                        new
-                        {
-                            Id = "f36a0a82-004c-4603-a78a-39f6a4ae49f0",
-                            Content = "Відповідь 47",
-                            QuestionId = "3037d92a-b64c-4727-bacb-aea136abf8e5"
-                        },
-                        new
-                        {
-                            Id = "356ce86a-3daa-4dda-a922-e878321f4a97",
-                            Content = "Відповідь 80",
-                            QuestionId = "3037d92a-b64c-4727-bacb-aea136abf8e5"
-                        },
-                        new
-                        {
-                            Id = "4b8f3012-e7ca-4ab4-a220-71e0832d5e0b",
-                            Content = "Відповідь 33",
-                            QuestionId = "3037d92a-b64c-4727-bacb-aea136abf8e5"
-                        },
-                        new
-                        {
-                            Id = "ca56748d-063f-46c8-bc5a-b91172075ecf",
-                            Content = "Відповідь 90",
-                            QuestionId = "3037d92a-b64c-4727-bacb-aea136abf8e5"
-                        },
-                        new
-                        {
-                            Id = "67921382-790e-49ba-875e-476e9f6e11b0",
+                            Id = "8cc2353b-0c64-4a11-a315-dcc8bc1c487b",
                             Content = "Відповідь 62",
-                            QuestionId = "ba93de1a-3b88-412f-bf99-25f0b05e8fba"
+                            QuestionId = "6d3d0979-35c7-47e7-ad80-56b5fe36307b"
                         },
                         new
                         {
-                            Id = "afd1399c-63d2-4b1f-a9a8-321addedc4e0",
-                            Content = "Відповідь 95",
-                            QuestionId = "ba93de1a-3b88-412f-bf99-25f0b05e8fba"
-                        },
-                        new
-                        {
-                            Id = "4eacdec9-5069-4327-b0df-10ab492fcf04",
-                            Content = "Відповідь 80",
-                            QuestionId = "ba93de1a-3b88-412f-bf99-25f0b05e8fba"
-                        },
-                        new
-                        {
-                            Id = "e0f0a649-2b53-43f8-8f67-05e8fbe3d86a",
-                            Content = "Відповідь 15",
-                            QuestionId = "ba93de1a-3b88-412f-bf99-25f0b05e8fba"
-                        },
-                        new
-                        {
-                            Id = "9b200205-561f-47a1-89f6-95b905633a32",
-                            Content = "Відповідь 44",
-                            QuestionId = "a1f50cf9-1d0e-4a8b-aed8-f786fa183871"
-                        },
-                        new
-                        {
-                            Id = "322e5ea3-7921-4993-8b1d-0001907e4081",
-                            Content = "Відповідь 24",
-                            QuestionId = "a1f50cf9-1d0e-4a8b-aed8-f786fa183871"
-                        },
-                        new
-                        {
-                            Id = "a7ca61e3-8392-4fc1-bc32-0c2cc85093a9",
-                            Content = "Відповідь 42",
-                            QuestionId = "a1f50cf9-1d0e-4a8b-aed8-f786fa183871"
-                        },
-                        new
-                        {
-                            Id = "5e866ba8-a5a3-4136-b3cc-3e32986ae40e",
-                            Content = "Відповідь 10",
-                            QuestionId = "a1f50cf9-1d0e-4a8b-aed8-f786fa183871"
-                        },
-                        new
-                        {
-                            Id = "e612915f-8375-4810-988f-5f0e10a901af",
-                            Content = "Відповідь 16",
-                            QuestionId = "622e953a-1706-44cf-b512-00ca87c7054f"
-                        },
-                        new
-                        {
-                            Id = "86c0a865-e1f7-47ed-a437-32855dcaaa1c",
+                            Id = "2956b1cf-6562-470a-9cb2-5d5af59aa3ac",
                             Content = "Відповідь 40",
-                            QuestionId = "622e953a-1706-44cf-b512-00ca87c7054f"
+                            QuestionId = "6d3d0979-35c7-47e7-ad80-56b5fe36307b"
                         },
                         new
                         {
-                            Id = "bb3bf8c1-fc6d-4296-8af7-03c14d36bc72",
-                            Content = "Відповідь 80",
-                            QuestionId = "622e953a-1706-44cf-b512-00ca87c7054f"
-                        },
-                        new
-                        {
-                            Id = "4a2a4eb9-df14-4796-a2e0-73eb49e9f516",
-                            Content = "Відповідь 53",
-                            QuestionId = "622e953a-1706-44cf-b512-00ca87c7054f"
-                        },
-                        new
-                        {
-                            Id = "9461a664-3b72-482a-8f99-2918724b04d3",
-                            Content = "Відповідь 67",
-                            QuestionId = "2e1dd1de-b3b4-4c5b-8c08-d998e0bd742e"
-                        },
-                        new
-                        {
-                            Id = "2605f03a-da24-4178-8f8d-bc229ad1a9d9",
-                            Content = "Відповідь 54",
-                            QuestionId = "2e1dd1de-b3b4-4c5b-8c08-d998e0bd742e"
-                        },
-                        new
-                        {
-                            Id = "eab147af-0956-4284-97be-221b23a87da2",
-                            Content = "Відповідь 96",
-                            QuestionId = "2e1dd1de-b3b4-4c5b-8c08-d998e0bd742e"
-                        },
-                        new
-                        {
-                            Id = "a4716804-23f2-4ce6-8b67-b67586c43fef",
-                            Content = "Відповідь 96",
-                            QuestionId = "2e1dd1de-b3b4-4c5b-8c08-d998e0bd742e"
-                        },
-                        new
-                        {
-                            Id = "c8e00b36-4c97-447c-b0e0-6f07e9ba2479",
+                            Id = "8368d15c-a9aa-4a54-99c7-91e1a0be6b72",
                             Content = "Відповідь 32",
-                            QuestionId = "98363f4e-59fb-4929-b33f-a8b41413a59c"
+                            QuestionId = "4c6005ec-2113-45f8-a244-44b46fc41e71"
                         },
                         new
                         {
-                            Id = "9c9a6674-6d79-4226-923e-fb31094cada9",
-                            Content = "Відповідь 48",
-                            QuestionId = "98363f4e-59fb-4929-b33f-a8b41413a59c"
+                            Id = "83f26dff-93c1-43e9-a758-0fdef393d5d5",
+                            Content = "Відповідь 34",
+                            QuestionId = "4c6005ec-2113-45f8-a244-44b46fc41e71"
                         },
                         new
                         {
-                            Id = "2f1c1f9c-f650-4fab-b732-8818045baadc",
-                            Content = "Відповідь 97",
-                            QuestionId = "98363f4e-59fb-4929-b33f-a8b41413a59c"
+                            Id = "3213a5cd-fc99-4b9d-9b28-1e190e13a88f",
+                            Content = "Відповідь 49",
+                            QuestionId = "4c6005ec-2113-45f8-a244-44b46fc41e71"
                         },
                         new
                         {
-                            Id = "83450f9b-46c7-48f6-84d0-b4fe81393ae4",
-                            Content = "Відповідь 87",
-                            QuestionId = "98363f4e-59fb-4929-b33f-a8b41413a59c"
+                            Id = "e8d12e13-61d1-4c28-be6b-20a5b452631f",
+                            Content = "Відповідь 12",
+                            QuestionId = "4c6005ec-2113-45f8-a244-44b46fc41e71"
                         },
                         new
                         {
-                            Id = "83778108-4034-4406-8bff-4123724316b1",
-                            Content = "Відповідь 91",
-                            QuestionId = "8195b8f6-1ce1-4d5e-990c-d638475906ca"
-                        },
-                        new
-                        {
-                            Id = "8c69081d-1374-4e07-b546-f86237671124",
-                            Content = "Відповідь 77",
-                            QuestionId = "8195b8f6-1ce1-4d5e-990c-d638475906ca"
-                        },
-                        new
-                        {
-                            Id = "f1bc7a93-831d-4cce-b8ed-a20d04c38714",
-                            Content = "Відповідь 62",
-                            QuestionId = "8195b8f6-1ce1-4d5e-990c-d638475906ca"
-                        },
-                        new
-                        {
-                            Id = "238a99d6-fb25-45f3-a001-c740bfbb0e88",
-                            Content = "Відповідь 16",
-                            QuestionId = "8195b8f6-1ce1-4d5e-990c-d638475906ca"
-                        },
-                        new
-                        {
-                            Id = "f2cd314c-d253-4ae3-9864-cb672a39fa98",
-                            Content = "Відповідь 57",
-                            QuestionId = "bf909ffa-8185-4667-8305-106bf0da54a7"
-                        },
-                        new
-                        {
-                            Id = "21c2459a-599b-40b3-8c22-4a58a1be6b5f",
-                            Content = "Відповідь 41",
-                            QuestionId = "bf909ffa-8185-4667-8305-106bf0da54a7"
-                        },
-                        new
-                        {
-                            Id = "c4f3d7a1-8ef4-4107-ad88-3c5cad8e5bc3",
-                            Content = "Відповідь 8",
-                            QuestionId = "bf909ffa-8185-4667-8305-106bf0da54a7"
-                        },
-                        new
-                        {
-                            Id = "ff3ac852-71b1-4e98-836a-257795dec411",
-                            Content = "Відповідь 60",
-                            QuestionId = "bf909ffa-8185-4667-8305-106bf0da54a7"
-                        },
-                        new
-                        {
-                            Id = "7fd0e495-9998-4079-846e-0f0dd2a5c4f7",
-                            Content = "Відповідь 17",
-                            QuestionId = "99e6660f-7cbe-408e-816e-4884e36710a3"
-                        },
-                        new
-                        {
-                            Id = "5b949545-9da9-475d-b545-18889e1dd1b1",
-                            Content = "Відповідь 64",
-                            QuestionId = "99e6660f-7cbe-408e-816e-4884e36710a3"
-                        },
-                        new
-                        {
-                            Id = "87fa5bf0-38aa-45e3-a49e-e88df5521cbb",
-                            Content = "Відповідь 31",
-                            QuestionId = "99e6660f-7cbe-408e-816e-4884e36710a3"
-                        },
-                        new
-                        {
-                            Id = "52395681-7ea9-4cc6-b78f-bd180bde6fb8",
-                            Content = "Відповідь 98",
-                            QuestionId = "99e6660f-7cbe-408e-816e-4884e36710a3"
-                        },
-                        new
-                        {
-                            Id = "b0c5dff5-c38e-48c7-96a3-88caecb6dd7d",
-                            Content = "Відповідь 68",
-                            QuestionId = "b304ceea-354a-48a5-9fd4-cfbaba3ed807"
-                        },
-                        new
-                        {
-                            Id = "37e7f517-2f71-46ca-ae7f-d303cff65ce4",
-                            Content = "Відповідь 7",
-                            QuestionId = "b304ceea-354a-48a5-9fd4-cfbaba3ed807"
-                        },
-                        new
-                        {
-                            Id = "5900fb6a-776f-40fa-97bb-c0dcbffe0ec4",
-                            Content = "Відповідь 75",
-                            QuestionId = "b304ceea-354a-48a5-9fd4-cfbaba3ed807"
-                        },
-                        new
-                        {
-                            Id = "a4a1a5be-155a-4998-a9f3-aebbecf0c4f8",
-                            Content = "Відповідь 31",
-                            QuestionId = "b304ceea-354a-48a5-9fd4-cfbaba3ed807"
-                        },
-                        new
-                        {
-                            Id = "1718fb86-f26a-4744-8b64-099db417e536",
-                            Content = "Відповідь 3",
-                            QuestionId = "acf21d61-127e-43c9-a826-42b3a1f9c27a"
-                        },
-                        new
-                        {
-                            Id = "0d21bb3b-a710-4227-afe8-ac7e9ac52b3c",
-                            Content = "Відповідь 2",
-                            QuestionId = "acf21d61-127e-43c9-a826-42b3a1f9c27a"
-                        },
-                        new
-                        {
-                            Id = "393589ff-ff99-4e6f-9c21-5fea3b5e77a5",
-                            Content = "Відповідь 4",
-                            QuestionId = "acf21d61-127e-43c9-a826-42b3a1f9c27a"
-                        },
-                        new
-                        {
-                            Id = "a0345972-9c4a-4712-8584-69a1ac9da4cb",
-                            Content = "Відповідь 26",
-                            QuestionId = "acf21d61-127e-43c9-a826-42b3a1f9c27a"
-                        },
-                        new
-                        {
-                            Id = "fa948e5e-5240-4509-a571-b7a3dc49482a",
-                            Content = "Відповідь 98",
-                            QuestionId = "3f867ec4-bf5a-4f83-b330-63fc1af3968a"
-                        },
-                        new
-                        {
-                            Id = "9f84aa62-2fea-4341-9fa1-5fcf6873c44a",
-                            Content = "Відповідь 31",
-                            QuestionId = "3f867ec4-bf5a-4f83-b330-63fc1af3968a"
-                        },
-                        new
-                        {
-                            Id = "52bf526e-a8db-4018-ab42-0f6b1434ebff",
-                            Content = "Відповідь 27",
-                            QuestionId = "3f867ec4-bf5a-4f83-b330-63fc1af3968a"
-                        },
-                        new
-                        {
-                            Id = "90253d61-c59b-434b-943c-382f0439694d",
-                            Content = "Відповідь 65",
-                            QuestionId = "3f867ec4-bf5a-4f83-b330-63fc1af3968a"
-                        },
-                        new
-                        {
-                            Id = "7a4271d1-db95-40f8-b2b1-d556b3268bbd",
-                            Content = "Відповідь 84",
-                            QuestionId = "f289bd58-6f6d-4e14-bf6a-098f53828b06"
-                        },
-                        new
-                        {
-                            Id = "076e5ae7-314f-4fd4-8ab9-e015f6a4f665",
-                            Content = "Відповідь 2",
-                            QuestionId = "f289bd58-6f6d-4e14-bf6a-098f53828b06"
-                        },
-                        new
-                        {
-                            Id = "631b5ac6-15d6-4d00-9a17-b6fc7e551c1d",
-                            Content = "Відповідь 48",
-                            QuestionId = "f289bd58-6f6d-4e14-bf6a-098f53828b06"
-                        },
-                        new
-                        {
-                            Id = "7d04cca2-4849-4994-bd7d-d2a4fa0f5a5d",
-                            Content = "Відповідь 9",
-                            QuestionId = "f289bd58-6f6d-4e14-bf6a-098f53828b06"
-                        },
-                        new
-                        {
-                            Id = "b3bedc7b-da32-4b48-b415-7dd56810f2a3",
-                            Content = "Відповідь 46",
-                            QuestionId = "a9a93533-04fe-4393-ab00-b2b38a6fd4c7"
-                        },
-                        new
-                        {
-                            Id = "293f2544-0b3b-45a6-86c8-4972a6e888e4",
-                            Content = "Відповідь 13",
-                            QuestionId = "a9a93533-04fe-4393-ab00-b2b38a6fd4c7"
-                        },
-                        new
-                        {
-                            Id = "a2c83c72-8124-46ed-a6de-e7c3727e03fb",
-                            Content = "Відповідь 80",
-                            QuestionId = "a9a93533-04fe-4393-ab00-b2b38a6fd4c7"
-                        },
-                        new
-                        {
-                            Id = "c5da8717-841a-4005-b64b-39dd5a6e7b2b",
+                            Id = "b9b9cdae-2131-497d-b678-4786b5ad00fb",
                             Content = "Відповідь 63",
-                            QuestionId = "a9a93533-04fe-4393-ab00-b2b38a6fd4c7"
+                            QuestionId = "ab44fa3d-7ab9-41e2-9592-9ea7b99bf39b"
                         },
                         new
                         {
-                            Id = "25c86609-c5b1-4a05-a27b-bbffe3a6580b",
+                            Id = "6ab56bac-2016-4752-8ece-f5e66301defe",
+                            Content = "Відповідь 22",
+                            QuestionId = "ab44fa3d-7ab9-41e2-9592-9ea7b99bf39b"
+                        },
+                        new
+                        {
+                            Id = "ff7cc8eb-0122-4967-9fd2-402b56db97a9",
+                            Content = "Відповідь 24",
+                            QuestionId = "ab44fa3d-7ab9-41e2-9592-9ea7b99bf39b"
+                        },
+                        new
+                        {
+                            Id = "77fd9ab9-6d54-4eb1-8970-8a1b8e89c60b",
+                            Content = "Відповідь 74",
+                            QuestionId = "ab44fa3d-7ab9-41e2-9592-9ea7b99bf39b"
+                        },
+                        new
+                        {
+                            Id = "8ac2ab72-2fa8-42ec-a8f6-902e4bacb882",
+                            Content = "Відповідь 48",
+                            QuestionId = "488e1580-2be8-4224-a479-035586148414"
+                        },
+                        new
+                        {
+                            Id = "f9dd026a-c159-4040-8c3b-4995e9ada2af",
+                            Content = "Відповідь 58",
+                            QuestionId = "488e1580-2be8-4224-a479-035586148414"
+                        },
+                        new
+                        {
+                            Id = "c2e77091-974a-4019-8424-39f881314f70",
+                            Content = "Відповідь 41",
+                            QuestionId = "488e1580-2be8-4224-a479-035586148414"
+                        },
+                        new
+                        {
+                            Id = "e2f87636-f079-436f-ae6d-0f5a92539dd7",
+                            Content = "Відповідь 70",
+                            QuestionId = "488e1580-2be8-4224-a479-035586148414"
+                        },
+                        new
+                        {
+                            Id = "1c7a3485-b003-43dc-a7ca-b10731670108",
+                            Content = "Відповідь 75",
+                            QuestionId = "482e42f4-f116-4b47-b0ae-10b70354755d"
+                        },
+                        new
+                        {
+                            Id = "fb381457-622e-4ebe-9d09-26859ae0a806",
+                            Content = "Відповідь 96",
+                            QuestionId = "482e42f4-f116-4b47-b0ae-10b70354755d"
+                        },
+                        new
+                        {
+                            Id = "adab1c34-8076-4e46-b088-3998d44b3f34",
+                            Content = "Відповідь 21",
+                            QuestionId = "482e42f4-f116-4b47-b0ae-10b70354755d"
+                        },
+                        new
+                        {
+                            Id = "891f8a89-a793-41e3-8d75-9f4deea608d6",
+                            Content = "Відповідь 50",
+                            QuestionId = "482e42f4-f116-4b47-b0ae-10b70354755d"
+                        },
+                        new
+                        {
+                            Id = "9f50ab0e-dd5c-4155-ab5d-0b4aba19b911",
+                            Content = "Відповідь 92",
+                            QuestionId = "c82ae074-05e3-4b6f-8789-e951720658a0"
+                        },
+                        new
+                        {
+                            Id = "7507f6d8-8395-4905-9426-853d4b506c53",
+                            Content = "Відповідь 38",
+                            QuestionId = "c82ae074-05e3-4b6f-8789-e951720658a0"
+                        },
+                        new
+                        {
+                            Id = "1f0d7cb1-c83a-4381-88c8-8448ee7b0ad5",
+                            Content = "Відповідь 21",
+                            QuestionId = "c82ae074-05e3-4b6f-8789-e951720658a0"
+                        },
+                        new
+                        {
+                            Id = "2e0cc471-f6e5-4354-bb03-f3e607bfaa8f",
+                            Content = "Відповідь 6",
+                            QuestionId = "c82ae074-05e3-4b6f-8789-e951720658a0"
+                        },
+                        new
+                        {
+                            Id = "1f9d897c-9167-483c-b12b-d932f44d988b",
+                            Content = "Відповідь 60",
+                            QuestionId = "5aa48f79-3caa-4536-ab92-6675a5ce19cc"
+                        },
+                        new
+                        {
+                            Id = "7e878d7b-8d17-4757-a5de-7446e0001743",
+                            Content = "Відповідь 87",
+                            QuestionId = "5aa48f79-3caa-4536-ab92-6675a5ce19cc"
+                        },
+                        new
+                        {
+                            Id = "035b0589-bb77-4677-80f2-4e0d0c07dd9f",
+                            Content = "Відповідь 32",
+                            QuestionId = "5aa48f79-3caa-4536-ab92-6675a5ce19cc"
+                        },
+                        new
+                        {
+                            Id = "5a972830-996b-4d0c-a696-e529db2d1264",
+                            Content = "Відповідь 28",
+                            QuestionId = "5aa48f79-3caa-4536-ab92-6675a5ce19cc"
+                        },
+                        new
+                        {
+                            Id = "3a3c51c6-3d34-4902-bef6-fc2f0c7031ae",
+                            Content = "Відповідь 63",
+                            QuestionId = "81638814-b787-486a-a9c9-610b8a16d3e1"
+                        },
+                        new
+                        {
+                            Id = "df821a9e-97fc-4075-a42a-5c03f4587152",
+                            Content = "Відповідь 94",
+                            QuestionId = "81638814-b787-486a-a9c9-610b8a16d3e1"
+                        },
+                        new
+                        {
+                            Id = "247861f5-b31c-45be-9099-fd40793f60a9",
+                            Content = "Відповідь 89",
+                            QuestionId = "81638814-b787-486a-a9c9-610b8a16d3e1"
+                        },
+                        new
+                        {
+                            Id = "f8c0c73a-9fb3-4b3a-a6ab-10e445820812",
+                            Content = "Відповідь 64",
+                            QuestionId = "81638814-b787-486a-a9c9-610b8a16d3e1"
+                        },
+                        new
+                        {
+                            Id = "31662ed9-4990-4930-9401-eb50813f6d62",
                             Content = "Відповідь 20",
-                            QuestionId = "f510e273-0b21-49a2-913d-f183cabd1ba2"
+                            QuestionId = "2fec5013-2680-43a6-8621-40d14ec904c0"
                         },
                         new
                         {
-                            Id = "48b0099f-52aa-40b6-a760-e7bda01c723a",
+                            Id = "041d77e3-11ca-4835-a373-b3f8d6e73ae5",
+                            Content = "Відповідь 50",
+                            QuestionId = "2fec5013-2680-43a6-8621-40d14ec904c0"
+                        },
+                        new
+                        {
+                            Id = "ad851c3c-4317-4a5c-94c5-5fa521d405d8",
+                            Content = "Відповідь 36",
+                            QuestionId = "2fec5013-2680-43a6-8621-40d14ec904c0"
+                        },
+                        new
+                        {
+                            Id = "3fba1b3f-8222-4d9d-947f-1da856ce948c",
+                            Content = "Відповідь 19",
+                            QuestionId = "2fec5013-2680-43a6-8621-40d14ec904c0"
+                        },
+                        new
+                        {
+                            Id = "d66db0c9-2e9a-4ff0-863c-64b44f52c990",
+                            Content = "Відповідь 59",
+                            QuestionId = "2d6da8e2-dc0b-47e7-962b-b8cd3997eba5"
+                        },
+                        new
+                        {
+                            Id = "51ec36b7-1259-45b1-afc4-5b4b94db281d",
+                            Content = "Відповідь 83",
+                            QuestionId = "2d6da8e2-dc0b-47e7-962b-b8cd3997eba5"
+                        },
+                        new
+                        {
+                            Id = "f0e5d721-eced-408a-92cf-3d371daf5412",
+                            Content = "Відповідь 83",
+                            QuestionId = "2d6da8e2-dc0b-47e7-962b-b8cd3997eba5"
+                        },
+                        new
+                        {
+                            Id = "0eee8e4b-de17-4294-b0a2-ce763c90b710",
+                            Content = "Відповідь 67",
+                            QuestionId = "2d6da8e2-dc0b-47e7-962b-b8cd3997eba5"
+                        },
+                        new
+                        {
+                            Id = "d7fe748b-51a3-41b8-be5d-bb7e94767795",
+                            Content = "Відповідь 19",
+                            QuestionId = "d504962b-d5ef-4d58-af58-606a2c852610"
+                        },
+                        new
+                        {
+                            Id = "1a693c72-99c1-4da8-b866-47ad7bf3389a",
+                            Content = "Відповідь 14",
+                            QuestionId = "d504962b-d5ef-4d58-af58-606a2c852610"
+                        },
+                        new
+                        {
+                            Id = "e433759e-1a15-4f13-a476-549581b071de",
+                            Content = "Відповідь 83",
+                            QuestionId = "d504962b-d5ef-4d58-af58-606a2c852610"
+                        },
+                        new
+                        {
+                            Id = "36a4531b-e7e3-4efd-8b8d-94ea6a95a242",
+                            Content = "Відповідь 34",
+                            QuestionId = "d504962b-d5ef-4d58-af58-606a2c852610"
+                        },
+                        new
+                        {
+                            Id = "7ba6bdf7-59b2-4ebf-8818-429cb73b1661",
+                            Content = "Відповідь 36",
+                            QuestionId = "9dca22e2-4bd9-4a82-882a-f19835c95118"
+                        },
+                        new
+                        {
+                            Id = "164034e6-5e6a-4c26-97c2-a7a492cfc342",
+                            Content = "Відповідь 44",
+                            QuestionId = "9dca22e2-4bd9-4a82-882a-f19835c95118"
+                        },
+                        new
+                        {
+                            Id = "02d3824d-1fdc-429f-86d8-b6e8834618b2",
+                            Content = "Відповідь 15",
+                            QuestionId = "9dca22e2-4bd9-4a82-882a-f19835c95118"
+                        },
+                        new
+                        {
+                            Id = "4e1c1d98-fb05-41f9-9e70-cff217e1c787",
+                            Content = "Відповідь 87",
+                            QuestionId = "9dca22e2-4bd9-4a82-882a-f19835c95118"
+                        },
+                        new
+                        {
+                            Id = "3e9e54d6-074d-48f7-bfcf-472f5b2089c2",
+                            Content = "Відповідь 3",
+                            QuestionId = "c085cd1d-4894-43f8-b383-d17371636f1c"
+                        },
+                        new
+                        {
+                            Id = "a8e6c2b9-658f-4058-8be0-775d86d179e1",
+                            Content = "Відповідь 8",
+                            QuestionId = "c085cd1d-4894-43f8-b383-d17371636f1c"
+                        },
+                        new
+                        {
+                            Id = "16dbc31f-bad6-4766-84d2-6cad3a765fb8",
+                            Content = "Відповідь 89",
+                            QuestionId = "c085cd1d-4894-43f8-b383-d17371636f1c"
+                        },
+                        new
+                        {
+                            Id = "ed4e2d0e-8dca-49fe-84f3-3b2244fe67c7",
+                            Content = "Відповідь 50",
+                            QuestionId = "c085cd1d-4894-43f8-b383-d17371636f1c"
+                        },
+                        new
+                        {
+                            Id = "035c7b92-52f7-4956-ae6e-df0ddb90234d",
+                            Content = "Відповідь 23",
+                            QuestionId = "15e8db4e-bb53-4164-8ac9-0e1e995d2e1f"
+                        },
+                        new
+                        {
+                            Id = "3c1bcff9-bede-4bc8-940f-863e7f735634",
+                            Content = "Відповідь 65",
+                            QuestionId = "15e8db4e-bb53-4164-8ac9-0e1e995d2e1f"
+                        },
+                        new
+                        {
+                            Id = "bb06a73a-0cce-49c3-a0d3-503e71ab6855",
+                            Content = "Відповідь 48",
+                            QuestionId = "15e8db4e-bb53-4164-8ac9-0e1e995d2e1f"
+                        },
+                        new
+                        {
+                            Id = "aa96bda8-a222-4223-b724-b906e96a68bc",
+                            Content = "Відповідь 73",
+                            QuestionId = "15e8db4e-bb53-4164-8ac9-0e1e995d2e1f"
+                        },
+                        new
+                        {
+                            Id = "a8096540-834c-4f95-9317-fa5773d3676b",
+                            Content = "Відповідь 81",
+                            QuestionId = "cb1f165b-2950-481b-91a2-89174acad2b8"
+                        },
+                        new
+                        {
+                            Id = "e7c4c6b2-2313-4f24-9c86-2c25e3e22557",
+                            Content = "Відповідь 26",
+                            QuestionId = "cb1f165b-2950-481b-91a2-89174acad2b8"
+                        },
+                        new
+                        {
+                            Id = "a1a1dd31-2700-426b-817b-bdc42dd29b53",
+                            Content = "Відповідь 88",
+                            QuestionId = "cb1f165b-2950-481b-91a2-89174acad2b8"
+                        },
+                        new
+                        {
+                            Id = "5b2d53b9-0215-4b80-9b41-4e11b9ed492b",
+                            Content = "Відповідь 72",
+                            QuestionId = "cb1f165b-2950-481b-91a2-89174acad2b8"
+                        },
+                        new
+                        {
+                            Id = "838689c3-d16d-4d3f-8dae-5208145b21a7",
+                            Content = "Відповідь 49",
+                            QuestionId = "08b47494-defb-4bf6-b5f7-d861d0f01e59"
+                        },
+                        new
+                        {
+                            Id = "60e83f56-8c87-4947-9dfc-bfddd3ee6b87",
+                            Content = "Відповідь 53",
+                            QuestionId = "08b47494-defb-4bf6-b5f7-d861d0f01e59"
+                        },
+                        new
+                        {
+                            Id = "b47fd5b3-3717-4c45-801b-5843699066d5",
+                            Content = "Відповідь 35",
+                            QuestionId = "08b47494-defb-4bf6-b5f7-d861d0f01e59"
+                        },
+                        new
+                        {
+                            Id = "e4489d91-6fa4-43a2-8a84-fffa3199e8fd",
                             Content = "Відповідь 62",
-                            QuestionId = "f510e273-0b21-49a2-913d-f183cabd1ba2"
-                        },
-                        new
-                        {
-                            Id = "da3aa296-6bb4-4b73-b5a2-31a52678d398",
-                            Content = "Відповідь 25",
-                            QuestionId = "f510e273-0b21-49a2-913d-f183cabd1ba2"
-                        },
-                        new
-                        {
-                            Id = "83a27d2f-6e1e-4d71-8dc0-fb1fab69770d",
-                            Content = "Відповідь 97",
-                            QuestionId = "f510e273-0b21-49a2-913d-f183cabd1ba2"
+                            QuestionId = "08b47494-defb-4bf6-b5f7-d861d0f01e59"
                         });
                 });
 
@@ -457,19 +460,19 @@ namespace opytuvannia_backend.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "0929179e-ae8c-4bfc-826a-57c69b0de18c",
+                            Id = "5046df65-b65e-4a6b-bb8a-e05c1b21f4e3",
                             LogoSrc = "https://silpo.ua/images/silpo_fb_share.png",
                             Name = "Сільпо"
                         },
                         new
                         {
-                            Id = "8f19e9a6-5538-403a-bbfa-9bf4d3d67934",
+                            Id = "75fcdb74-bee8-4441-bab0-7225a7553ea2",
                             LogoSrc = "https://cdn.metro-online.com/-/media/Project/MCW/RU_Metro/2021/join-us/Metro.png?rev=fe69769d14aa4105bc7e5731e32ebfc7&w=339&hash=783A0BB0789E586BB438C44B0778558A",
                             Name = "Metro"
                         },
                         new
                         {
-                            Id = "e1a9cebb-661b-475a-9ae3-323883e497eb",
+                            Id = "57d591d7-b380-4763-8615-58231b984942",
                             LogoSrc = "https://allretail.ua/static/files/originals/2/85/30b01f786bd9a28d98e745247184f852.svg",
                             Name = "АТБ"
                         });
@@ -502,98 +505,98 @@ namespace opytuvannia_backend.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "44b50da0-1a6d-4df3-8538-0185c2e9e5b8",
-                            SurveyId = "53ddc52b-0cfe-4de4-b353-30ff6f0d8133",
+                            Id = "6d3d0979-35c7-47e7-ad80-56b5fe36307b",
+                            SurveyId = "36d380a6-7007-4928-9e00-ca3c9a1acf14",
                             Title = "Яке пиво ви купуєте найчастіше?"
                         },
                         new
                         {
-                            Id = "3037d92a-b64c-4727-bacb-aea136abf8e5",
-                            SurveyId = "53ddc52b-0cfe-4de4-b353-30ff6f0d8133",
+                            Id = "4c6005ec-2113-45f8-a244-44b46fc41e71",
+                            SurveyId = "36d380a6-7007-4928-9e00-ca3c9a1acf14",
                             Title = "Чи спробували ви нові сорти пива в нашому магазині?"
                         },
                         new
                         {
-                            Id = "ba93de1a-3b88-412f-bf99-25f0b05e8fba",
-                            SurveyId = "53ddc52b-0cfe-4de4-b353-30ff6f0d8133",
+                            Id = "ab44fa3d-7ab9-41e2-9592-9ea7b99bf39b",
+                            SurveyId = "36d380a6-7007-4928-9e00-ca3c9a1acf14",
                             Title = "Які характеристики пива важливі для вас?"
                         },
                         new
                         {
-                            Id = "a1f50cf9-1d0e-4a8b-aed8-f786fa183871",
-                            SurveyId = "53ddc52b-0cfe-4de4-b353-30ff6f0d8133",
+                            Id = "488e1580-2be8-4224-a479-035586148414",
+                            SurveyId = "36d380a6-7007-4928-9e00-ca3c9a1acf14",
                             Title = "Як часто ви купуєте пиво в наших магазинах?"
                         },
                         new
                         {
-                            Id = "622e953a-1706-44cf-b512-00ca87c7054f",
-                            SurveyId = "2091f48c-a6a6-4c03-b1cd-75d4488c06aa",
+                            Id = "482e42f4-f116-4b47-b0ae-10b70354755d",
+                            SurveyId = "3828d7fc-7b50-4da6-8884-599db176a644",
                             Title = "Який продукт ви купуєте найчастіше в Metro?"
                         },
                         new
                         {
-                            Id = "2e1dd1de-b3b4-4c5b-8c08-d998e0bd742e",
-                            SurveyId = "2091f48c-a6a6-4c03-b1cd-75d4488c06aa",
+                            Id = "c82ae074-05e3-4b6f-8789-e951720658a0",
+                            SurveyId = "3828d7fc-7b50-4da6-8884-599db176a644",
                             Title = "Чи задоволені ви асортиментом товарів у наших магазинах?"
                         },
                         new
                         {
-                            Id = "98363f4e-59fb-4929-b33f-a8b41413a59c",
-                            SurveyId = "2091f48c-a6a6-4c03-b1cd-75d4488c06aa",
+                            Id = "5aa48f79-3caa-4536-ab92-6675a5ce19cc",
+                            SurveyId = "3828d7fc-7b50-4da6-8884-599db176a644",
                             Title = "Які характеристики товарів важливі для вас при покупці?"
                         },
                         new
                         {
-                            Id = "8195b8f6-1ce1-4d5e-990c-d638475906ca",
-                            SurveyId = "2091f48c-a6a6-4c03-b1cd-75d4488c06aa",
+                            Id = "81638814-b787-486a-a9c9-610b8a16d3e1",
+                            SurveyId = "3828d7fc-7b50-4da6-8884-599db176a644",
                             Title = "Як часто ви відвідуєте наші магазини?"
                         },
                         new
                         {
-                            Id = "bf909ffa-8185-4667-8305-106bf0da54a7",
-                            SurveyId = "b66d55d6-61d9-403b-b22f-0cab26599468",
+                            Id = "2fec5013-2680-43a6-8621-40d14ec904c0",
+                            SurveyId = "46cdf134-5d3b-4dfb-9dfb-039681eb932f",
                             Title = "Як часто ви здійснюєте покупки в АТБ?"
                         },
                         new
                         {
-                            Id = "99e6660f-7cbe-408e-816e-4884e36710a3",
-                            SurveyId = "b66d55d6-61d9-403b-b22f-0cab26599468",
+                            Id = "2d6da8e2-dc0b-47e7-962b-b8cd3997eba5",
+                            SurveyId = "46cdf134-5d3b-4dfb-9dfb-039681eb932f",
                             Title = "Які товари ви найчастіше купуєте в наших магазинах?"
                         },
                         new
                         {
-                            Id = "b304ceea-354a-48a5-9fd4-cfbaba3ed807",
-                            SurveyId = "b66d55d6-61d9-403b-b22f-0cab26599468",
+                            Id = "d504962b-d5ef-4d58-af58-606a2c852610",
+                            SurveyId = "46cdf134-5d3b-4dfb-9dfb-039681eb932f",
                             Title = "Чи задоволені ви якістю обслуговування у наших магазинах?"
                         },
                         new
                         {
-                            Id = "acf21d61-127e-43c9-a826-42b3a1f9c27a",
-                            SurveyId = "b66d55d6-61d9-403b-b22f-0cab26599468",
+                            Id = "9dca22e2-4bd9-4a82-882a-f19835c95118",
+                            SurveyId = "46cdf134-5d3b-4dfb-9dfb-039681eb932f",
                             Title = "Чи вважаєте ви наші ціни конкурентоспроможними?"
                         },
                         new
                         {
-                            Id = "3f867ec4-bf5a-4f83-b330-63fc1af3968a",
-                            SurveyId = "273f4d05-315b-48e5-8938-4746bab72b5c",
+                            Id = "c085cd1d-4894-43f8-b383-d17371636f1c",
+                            SurveyId = "51fb15c3-a702-41a6-8653-40b1cbd5e628",
                             Title = "Як ви оцінюєте чистоту наших магазинів?"
                         },
                         new
                         {
-                            Id = "f289bd58-6f6d-4e14-bf6a-098f53828b06",
-                            SurveyId = "273f4d05-315b-48e5-8938-4746bab72b5c",
+                            Id = "15e8db4e-bb53-4164-8ac9-0e1e995d2e1f",
+                            SurveyId = "51fb15c3-a702-41a6-8653-40b1cbd5e628",
                             Title = "Чи допомагає вам персонал з пошуком товарів?"
                         },
                         new
                         {
-                            Id = "a9a93533-04fe-4393-ab00-b2b38a6fd4c7",
-                            SurveyId = "273f4d05-315b-48e5-8938-4746bab72b5c",
+                            Id = "cb1f165b-2950-481b-91a2-89174acad2b8",
+                            SurveyId = "51fb15c3-a702-41a6-8653-40b1cbd5e628",
                             Title = "Чи вважаєте ви, що у нас завжди є необхідні товари?"
                         },
                         new
                         {
-                            Id = "f510e273-0b21-49a2-913d-f183cabd1ba2",
-                            SurveyId = "273f4d05-315b-48e5-8938-4746bab72b5c",
+                            Id = "08b47494-defb-4bf6-b5f7-d861d0f01e59",
+                            SurveyId = "51fb15c3-a702-41a6-8653-40b1cbd5e628",
                             Title = "Чи радите ви своїм знайомим відвідувати магазини АТБ?"
                         });
                 });
@@ -659,12 +662,12 @@ namespace opytuvannia_backend.Migrations
                         .HasColumnName("reward_id");
 
                     b.HasKey("Id")
-                        .HasName("pk_respondent_rewards");
+                        .HasName("pk_respondent_reward");
 
                     b.HasIndex("RespondentId")
-                        .HasDatabaseName("ix_respondent_rewards_respondent_id");
+                        .HasDatabaseName("ix_respondent_reward_respondent_id");
 
-                    b.ToTable("respondent_rewards", (string)null);
+                    b.ToTable("respondent_reward", (string)null);
                 });
 
             modelBuilder.Entity("opytuvannia_backend.Entities.RespondentSurvey", b =>
@@ -754,22 +757,22 @@ namespace opytuvannia_backend.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "053330d5-6641-4006-acf8-7d9b11fa1fa7",
+                            Id = "7b128dcf-8520-4c18-ac6c-75e6bd1cb349",
                             Content = "Промокод -50% на чернігівське титан zxcqw-e13371000-7wwww"
                         },
                         new
                         {
-                            Id = "5558e8e0-7736-4a40-9153-b6b6ba2c6679",
+                            Id = "3ff1ce43-d650-4ea8-a409-cfe4c6170988",
                             Content = "+100 грн"
                         },
                         new
                         {
-                            Id = "3fbc03c5-da3d-4326-89c9-4a21f601c19d",
+                            Id = "3e4c4aeb-80c4-4120-8885-b6e566ee368f",
                             Content = "Знижка 10% на наступну покупку"
                         },
                         new
                         {
-                            Id = "2e284ad6-3824-42b7-904b-37a1a5db9991",
+                            Id = "9d787398-4942-42e2-9ed1-c56f96326644",
                             Content = "Безкоштовна доставка при наступному замовленні"
                         });
                 });
@@ -814,34 +817,34 @@ namespace opytuvannia_backend.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "53ddc52b-0cfe-4de4-b353-30ff6f0d8133",
-                            CompanyId = "0929179e-ae8c-4bfc-826a-57c69b0de18c",
+                            Id = "36d380a6-7007-4928-9e00-ca3c9a1acf14",
+                            CompanyId = "5046df65-b65e-4a6b-bb8a-e05c1b21f4e3",
                             Description = "Опитування про ваші уподобання щодо пива",
-                            RewardId = "053330d5-6641-4006-acf8-7d9b11fa1fa7",
+                            RewardId = "7b128dcf-8520-4c18-ac6c-75e6bd1cb349",
                             Title = "Споживання пива"
                         },
                         new
                         {
-                            Id = "2091f48c-a6a6-4c03-b1cd-75d4488c06aa",
-                            CompanyId = "8f19e9a6-5538-403a-bbfa-9bf4d3d67934",
+                            Id = "3828d7fc-7b50-4da6-8884-599db176a644",
+                            CompanyId = "75fcdb74-bee8-4441-bab0-7225a7553ea2",
                             Description = "Допоможіть нам визначити найпопулярніший продукт в Metro",
-                            RewardId = "5558e8e0-7736-4a40-9153-b6b6ba2c6679",
+                            RewardId = "3ff1ce43-d650-4ea8-a409-cfe4c6170988",
                             Title = "Найкращий продукт"
                         },
                         new
                         {
-                            Id = "b66d55d6-61d9-403b-b22f-0cab26599468",
-                            CompanyId = "e1a9cebb-661b-475a-9ae3-323883e497eb",
+                            Id = "46cdf134-5d3b-4dfb-9dfb-039681eb932f",
+                            CompanyId = "57d591d7-b380-4763-8615-58231b984942",
                             Description = "Щоб покращити обслуговування, просимо вас взяти участь в нашому опитуванні",
-                            RewardId = "3fbc03c5-da3d-4326-89c9-4a21f601c19d",
+                            RewardId = "3e4c4aeb-80c4-4120-8885-b6e566ee368f",
                             Title = "Ваші покупки в АТБ"
                         },
                         new
                         {
-                            Id = "273f4d05-315b-48e5-8938-4746bab72b5c",
-                            CompanyId = "e1a9cebb-661b-475a-9ae3-323883e497eb",
+                            Id = "51fb15c3-a702-41a6-8653-40b1cbd5e628",
+                            CompanyId = "57d591d7-b380-4763-8615-58231b984942",
                             Description = "Оцініть якість обслуговування в наших магазинах",
-                            RewardId = "3fbc03c5-da3d-4326-89c9-4a21f601c19d",
+                            RewardId = "3e4c4aeb-80c4-4120-8885-b6e566ee368f",
                             Title = "Якість обслуговування"
                         });
                 });
@@ -877,7 +880,7 @@ namespace opytuvannia_backend.Migrations
                         .HasForeignKey("RespondentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
-                        .HasConstraintName("fk_respondent_rewards_respondents_respondent_id");
+                        .HasConstraintName("fk_respondent_reward_respondents_respondent_id");
                 });
 
             modelBuilder.Entity("opytuvannia_backend.Entities.RespondentSurvey", b =>

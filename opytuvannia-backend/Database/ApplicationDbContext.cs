@@ -20,6 +20,8 @@ public class ApplicationDbContext : DbContext
     public DbSet<Question> Questions { get; set; }
     public DbSet<RespondentSurvey> RespondentSurveys { get; set; }
     public DbSet<RespondentSurveyAnswer> RespondentSurveyAnswers { get; set; }
+    public DbSet<Reward> Rewards { get; set; }
+    public DbSet<RespondentReward> RespondentRewards { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

@@ -8,5 +8,6 @@ public class Survey
     public Company Company { get; set; }
     public string Description { get; set; }
     public List<Question> Questions { get; set; }
-    public string Reward { get; set; }
+    public string RewardId { get; set; }
+    public Reward Reward { get; set; }
 }

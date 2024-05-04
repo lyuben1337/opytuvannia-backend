@@ -15,10 +15,20 @@ namespace opytuvannia_backend.Database
 
             modelBuilder.Entity<Company>().HasData(silpo, metro, atb);
 
-            var silpoSurvey = new Survey { CompanyId = silpo.Id, Title = "Споживання пива", Description = "Опитування про ваші уподобання щодо пива", Reward = "Промокод -50% на чернігівське титан zxcqw-e13371000-7wwww" };
-            var metroSurvey = new Survey { CompanyId = metro.Id, Title = "Найкращий продукт", Description = "Допоможіть нам визначити найпопулярніший продукт в Metro", Reward = "+100 грн" };
-            var atbSurvey = new Survey { CompanyId = atb.Id, Title = "Ваші покупки в АТБ", Description = "Щоб покращити обслуговування, просимо вас взяти участь в нашому опитуванні", Reward = "Знижка 10% на наступну покупку" };
-            var atbSurvey2 = new Survey { CompanyId = atb.Id, Title = "Якість обслуговування", Description = "Оцініть якість обслуговування в наших магазинах", Reward = "Безкоштовна доставка при наступному замовленні" };
+            var rewards = new List<Reward>
+            {
+                new() { Content = "Промокод -50% на чернігівське титан zxcqw-e13371000-7wwww" },
+                new() { Content = "+100 грн" },
+                new() { Content = "Знижка 10% на наступну покупку" },
+                new() { Content = "Безкоштовна доставка при наступному замовленні" }
+            };
+
+            modelBuilder.Entity<Reward>().HasData(rewards);
+            
+            var silpoSurvey = new Survey { CompanyId = silpo.Id, Title = "Споживання пива", Description = "Опитування про ваші уподобання щодо пива", RewardId = rewards[0].Id };
+            var metroSurvey = new Survey { CompanyId = metro.Id, Title = "Найкращий продукт", Description = "Допоможіть нам визначити найпопулярніший продукт в Metro", RewardId = rewards[1].Id  };
+            var atbSurvey = new Survey { CompanyId = atb.Id, Title = "Ваші покупки в АТБ", Description = "Щоб покращити обслуговування, просимо вас взяти участь в нашому опитуванні", RewardId = rewards[2].Id };
+            var atbSurvey2 = new Survey { CompanyId = atb.Id, Title = "Якість обслуговування", Description = "Оцініть якість обслуговування в наших магазинах", RewardId = rewards[2].Id };
 
             modelBuilder.Entity<Survey>().HasData(silpoSurvey, metroSurvey, atbSurvey, atbSurvey2);
 

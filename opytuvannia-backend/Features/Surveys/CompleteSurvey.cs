@@ -48,6 +48,7 @@ public static class CompleteSurvey
             var survey = await _dbContext.Surveys
                 .Include(s => s.Questions)
                 .ThenInclude(question => question.Answers)
+                .Include(s => s.Reward)
                 .FirstOrDefaultAsync(s => s.Id == request.SurveyId, cancellationToken);
 
             if (survey is null)
@@ -105,11 +106,18 @@ public static class CompleteSurvey
                 }
             }
 
+            var respondentReward = new RespondentReward
+            {
+                RespondentId = respondentId,
+                RewardId = survey.Reward.Id
+            };
+            
             _dbContext.RespondentSurveys.Add(completedSurvey);
             _dbContext.RespondentSurveyAnswers.AddRange(answers);
+            _dbContext.RespondentRewards.Add(respondentReward);
             await _dbContext.SaveChangesAsync(cancellationToken);
-
-            return new CompleteSurveyResponse { Reward = survey.Reward };
+            
+            return new CompleteSurveyResponse { Reward = survey.Reward.Content };
         }
     }
 }

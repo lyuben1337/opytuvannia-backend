@@ -28,4 +28,6 @@ public class Respondent
     public string? Address { get; set; }
 
     public List<RespondentSurvey> CompletedSurveys { get; set; }
+
+    public List<RespondentReward> Rewards { get; set; }
 }

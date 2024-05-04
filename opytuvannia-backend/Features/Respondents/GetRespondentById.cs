@@ -4,6 +4,7 @@ using Mapster;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using opytuvannia_backend.Contracts.Respondents.Responses;
 using opytuvannia_backend.Database;
 using opytuvannia_backend.Shared;
@@ -48,14 +49,28 @@ public static class GetRespondentById
                     validationResult.ToString()));
             }
 
-            var respondent = await _dbContext.Respondents.FindAsync(request.Id, cancellationToken);
+            var respondent = await _dbContext.Respondents
+                .Include(r => r.Rewards)
+                .ThenInclude(r => r.Reward)
+                .FirstAsync(r => r.Id == request.Id, cancellationToken);
 
             if (respondent is null)
             {
                 return Result.Failure<RespondentResponse>(Error.RespondentNotFound);
             }
             
-            return respondent.Adapt<RespondentResponse>();
+            var respondentResponse = new RespondentResponse
+            {
+                Id = respondent.Id,
+                Email = respondent.Email,
+                Name = respondent.Name,
+                Gender = respondent.Gender.ToString(),
+                BirthDate = respondent.BirthDate,
+                Address = respondent.Address,
+                Rewards = respondent.Rewards.ConvertAll(r => r.Reward)
+            };
+
+            return respondentResponse;
         }
     }
 }
