@@ -1,0 +1,25 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;
+  &lt;Assembly Path="/Users/lyuben1337/.nuget/packages/mockqueryable.moq/7.0.1/lib/net6.0/MockQueryable.Moq.dll" /&gt;
+&lt;/AssemblyExplorer&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=430c2c6a_002D734d_002D462e_002D839f_002Df95de239becf/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CompleteSurvey_SurveyNotFound" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::7CE28BC7-CFF3-4F59-BB1F-721413079457::net8.0::Features.UnitTests.CreateRespondentTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::7CE28BC7-CFF3-4F59-BB1F-721413079457::net8.0::Features.UnitTests.CreateRespondentSessionTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::7CE28BC7-CFF3-4F59-BB1F-721413079457::net8.0::Features.UnitTests.GetAllSurveyTests.Handler_ReturnsStatusOk_WhenIsSuccessIsTrue&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::7CE28BC7-CFF3-4F59-BB1F-721413079457::net8.0::Features.UnitTests.GetAllSurveyTests.Handler_ReturnsStatusOk_WhenIsSuccessIsTrue_Mocked&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::7CE28BC7-CFF3-4F59-BB1F-721413079457::net8.0::Features.UnitTests.GetAllSurveyTests&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=508ba507_002D55bd_002D4c55_002D921f_002Df535dce21169/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CompleteSurveyTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::8397E618-F73E-4C06-AC3B-B3287ADAEC40::net8.0::CompleteSurveyTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=aeda5c20_002D902e_002D4ebd_002Da58e_002D69c7d1bfbf68/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CreateRespondentTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::8397E618-F73E-4C06-AC3B-B3287ADAEC40::net8.0::Features.UnitTests.CreateRespondentTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::8397E618-F73E-4C06-AC3B-B3287ADAEC40::net8.0::Features.UnitTests.CompleteSurveyTests.Handle_ReturnsFailureResponse_WhenExistingRespondentSurveyFound&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=opytuvannia/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>
