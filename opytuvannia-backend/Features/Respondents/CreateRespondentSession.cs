@@ -29,6 +29,11 @@ public static class CreateRespondentSession
                 .MaximumLength(320)
                 .EmailAddress()
                 .WithMessage("Invalid email format");
+            RuleFor(c => c.Password)
+                .NotEmpty()
+                .MaximumLength(320)
+                .Matches(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$")
+                .WithMessage("Invalid password format");
         }
     }
     
